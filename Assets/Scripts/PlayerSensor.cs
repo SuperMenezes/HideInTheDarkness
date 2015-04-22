@@ -17,12 +17,23 @@ public class PlayerSensor : MonoBehaviour {
 		foreach (ContactPoint contact in collision.contacts) {
 			Debug.DrawRay(contact.point, contact.normal, Color.white);
 		}
+		
+		if(collision.transform.tag == "Item")
+		{
+			Debug.Log("Item Collision Enter");
+			if(collision.transform.GetComponent<ItemEvent>().Enabled)
+			{
+				collision.transform.GetComponent<ItemEvent>().PopUpMessage(true);
+			}
+		}
+		
 		Debug.Log("WOOT");
 	}
 	
 	void OnTriggerEnter(Collider other) {
 		if(other.tag == "Item")
 		{
+			Debug.Log("Item Trigger Enter");
 			if(other.GetComponent<ItemEvent>().Enabled)
 			{
 				other.GetComponent<ItemEvent>().PopUpMessage(true);
