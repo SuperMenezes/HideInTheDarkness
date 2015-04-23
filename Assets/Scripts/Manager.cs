@@ -111,7 +111,7 @@ public class Manager : MonoBehaviour {
 					OutrosIndex++;
 					if(OutrosIndex >= Intros.Count)
 					{
-						
+						Application.Quit();
 						break;
 					}
 					Debug.Log(IntrosIndex);
