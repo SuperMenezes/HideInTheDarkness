@@ -25,6 +25,7 @@ public class NPCAnimateStuffEvent : NPCEvent {
 		{
 			if(Target.activeInHierarchy)
 			{
+				Debug.Log("TENTAR ANIMAR");
 				Target.animation.Play(AnimationName);
 				Triggered = true;
 			}

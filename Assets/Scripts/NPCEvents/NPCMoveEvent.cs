@@ -23,7 +23,7 @@ public class NPCMoveEvent : NPCEvent {
 		}
 		
 		float LerpPercent = LerpTime/MoveTime;
-		Debug.Log("Lerp % = " + LerpPercent);
+		//Debug.Log("Lerp % = " + LerpPercent);
 		
 		Owner.position = Vector3.Lerp(transform.position, TargetPosition.position, LerpPercent);
 		

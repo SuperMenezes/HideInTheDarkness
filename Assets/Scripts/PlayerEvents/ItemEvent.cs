@@ -10,10 +10,17 @@ public class ItemEvent : Event {
 	
 	private GameObject PopUpText;
 	
+	public AudioClip Clip;
+	
+	private AudioSource Source;
+	
 	// Use this for initialization
 	void Start () {
 		CreatePopUpText();
-
+		
+		Source = gameObject.AddComponent<AudioSource>();
+		Source.audio.clip = Clip;
+		
 		if(Enabled)
 			gameObject.renderer.material.color = Color.red;
 		else
@@ -58,15 +65,17 @@ public class ItemEvent : Event {
 	public void PopUpMessage(bool visible)
 	{
 		PopUpText.GetComponent<MeshRenderer>().enabled = visible;
+		
+		if(visible && Clip != null)
+		{
+			Source.Play();
+		}
 	}
 
 	public override void TriggerEvent ()
 	{
-		Debug.Log("TriggerEvent");
-		
 		Triggered = true;
-		
-		
+
 		foreach(Event chainedEvent in ChainedEvents)
 		{
 			chainedEvent.CheckRequirements();
@@ -75,9 +84,7 @@ public class ItemEvent : Event {
 		Enabled = false;
 		PopUpMessage(false);
 
-
 		gameObject.renderer.material.color = Color.black;
-		Debug.Log("Evento " + gameObject.name + " disparado e desabilitado!");
 	}
 	
 	

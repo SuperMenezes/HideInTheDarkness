@@ -18,6 +18,10 @@ public class EnableStuffEvent : Event {
 	
 	}
 	
+	/*public void Olha (){
+		print("adas");
+	}*/
+	
 	public override void TriggerEvent ()
 	{
 		Target.SetActive(true);

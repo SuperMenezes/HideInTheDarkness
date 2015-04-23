@@ -31,6 +31,8 @@ public class PlayerSensor : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider other) {
+		Debug.Log("ENTER");
+		
 		if(other.tag == "Item")
 		{
 			Debug.Log("Item Trigger Enter");
@@ -44,6 +46,7 @@ public class PlayerSensor : MonoBehaviour {
 		{
 			if(other.GetComponent<GoalEvent>().Enabled)
 			{
+				Debug.Log("GOEL EVENT");
 				other.GetComponent<GoalEvent>().TriggerEvent();
 			}
 		}

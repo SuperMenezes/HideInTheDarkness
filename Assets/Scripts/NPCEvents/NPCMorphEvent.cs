@@ -8,7 +8,7 @@ public class NPCMorphEvent : NPCEvent {
 
 	// Use this for initialization
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
@@ -33,9 +33,9 @@ public class NPCMorphEvent : NPCEvent {
 				Owner.GetComponent<NPCEventProcessor>().EventList.Add(newEvent);
 			}
 			Owner.GetComponent<NPCEventProcessor>().Restart();
+			Owner.audio.Play();	
 			
 		}
-		
 		return true;
 	}
 }

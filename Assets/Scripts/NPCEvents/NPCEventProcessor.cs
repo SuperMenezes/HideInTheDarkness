@@ -15,7 +15,7 @@ public class NPCEventProcessor : MonoBehaviour {
 	void Start () {
 		EventIndex = 0;
 		CurrentEvent = EventList[EventIndex];
-		Debug.Log("Fetch Event: " + CurrentEvent.name);
+		//Debug.Log("Fetch Event: " + CurrentEvent.name);
 	}
 	
 	// Update is called once per frame
@@ -31,7 +31,7 @@ public class NPCEventProcessor : MonoBehaviour {
 					return;	
 				}
 				CurrentEvent = EventList[EventIndex];
-				Debug.Log("Fetch Event: " + CurrentEvent.name);
+				//Debug.Log("Fetch Event: " + CurrentEvent.name);
 			}
 		}
 	}
