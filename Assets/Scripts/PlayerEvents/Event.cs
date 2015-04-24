@@ -24,7 +24,9 @@ public class Event : MonoBehaviour {
 			if(!chainedRequirement.Triggered)
 			{
 				Enabled = false;
-				gameObject.renderer.material.color = Color.white;
+				if(gameObject.renderer != null)
+				
+					gameObject.renderer.material.color = Color.white;
 				return;
 			}
 		}

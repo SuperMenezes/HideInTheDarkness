@@ -39,6 +39,9 @@ public class Manager : MonoBehaviour {
 		Intros.Add("hide in the shadows");
 		Intros.Add("avoid grown ups");
 		Intros.Add("enter the park");
+		Intros.Add("arrows -> move");
+		Intros.Add("ctrl -> action");
+
 		Intros.Add("GO!");		
 		
 		Outros = new List<string>()	;
